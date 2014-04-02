@@ -1,0 +1,62 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  min-width: 100%;
+}
+body:before {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  content: 'default';
+}
+@media screen and (max-width: 239px) {
+  body:before {
+    content: 'palm';
+  }
+}
+@media screen and (min-width: 240px) and (max-width: 479px) {
+  body:before {
+    content: 'phone';
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 719px) {
+  body:before {
+    content: 'tablet';
+  }
+}
+@media screen and (min-width: 720px) and (max-width: 959px) {
+  body:before {
+    content: 'laptop';
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1199px) {
+  body:before {
+    content: 'desktop';
+  }
+}
+@media screen and (min-width: 1200px) {
+  body:before {
+    content: 'large-desktop';
+  }
+}
+body:after {
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  content: 'default';
+}
+@media screen and (orientation: portrait) {
+  body:after {
+    content: 'portrait';
+  }
+}
+@media screen and (orientation: landscape) {
+  body:after {
+    content: 'landscape';
+  }
+}
+

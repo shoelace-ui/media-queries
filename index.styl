@@ -1,0 +1,23 @@
+mediaQueryNames = 'palm' 'phone' 'tablet' 'laptop' 'desktop' 'large-desktop'
+mediaQueryConditions = {}
+
+
+for name, i in mediaQueryNames
+  low = (i*240)px
+  high = (((i+1)*240) - 1)px
+  if i == 0
+    mediaQueryConditions[name] = 'screen and (max-width: %s)' % high
+  else if i == length(mediaQueryNames) - 1
+    mediaQueryConditions[name] = 'screen and (min-width: %s)' % low 
+  else
+    mediaQueryConditions[name] = 'screen and (min-width: %s) and (max-width: %s)' % (low high)
+
+screenSize(size)
+  condition = mediaQueryConditions[size]
+  @media condition
+    {block}
+
+screenOrientation(orientation)
+  condition = 'screen and (orientation: %s)' % unquote(orientation)
+  @media condition
+    {block}
