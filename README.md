@@ -5,7 +5,7 @@ Super-easy media queries for Shoelace-UI
 ## Usage
 
 ```stylus
-@import 'shoelace-ui-media-queries'
+@require 'shoelace-ui-media-queries'
 
 .foo
   color blue

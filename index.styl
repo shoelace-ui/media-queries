@@ -8,7 +8,7 @@ for name, i in mediaQueryNames
   if i == 0
     mediaQueryConditions[name] = 'screen and (max-width: %s)' % high
   else if i == length(mediaQueryNames) - 1
-    mediaQueryConditions[name] = 'screen and (min-width: %s)' % low 
+    mediaQueryConditions[name] = 'screen and (min-width: %s)' % low
   else
     mediaQueryConditions[name] = 'screen and (min-width: %s) and (max-width: %s)' % (low high)
 
