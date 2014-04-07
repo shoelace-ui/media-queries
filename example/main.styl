@@ -6,40 +6,83 @@ html, body
   min-height 100%
   min-width 100%
 
-body:before
-  display block
-  position absolute
-  top 20px
-  left 20px
-  content 'default'
+li
+  color #ddd
 
-  +screenSize('palm')
-    content 'palm'
++screenSizeAbove('tablet')
+  .aboveKeyword
+    color green
 
-  +screenSize('phone')
-    content 'phone'
++screenSizeAbove(500px)
+  .aboveSize
+    color green
 
-  +screenSize('tablet')
-    content 'tablet'
 
-  +screenSize('laptop')
-    content 'laptop'
 
-  +screenSize('desktop')
-    content 'desktop'
++screenSizeBelow('large-desktop')
+  .belowKeyword
+    color green
 
-  +screenSize('large-desktop')
-    content 'large-desktop'
++screenSizeBelow(1000px)
+  .belowSize
+    color green
 
-body:after
-  display block
-  position absolute
-  top 20px
-  right 20px
-  content 'default'
 
-  +screenOrientation('portrait')
-    content 'portrait'
 
-  +screenOrientation('landscape')
-    content 'landscape'
++screenSizeBetween(500px, 1000px)
+  .betweenSizeSize
+    color green
+
++screenSizeBetween('tablet', 'laptop')
+  .betweenKeywordKeyword
+    color green
+
++screenSizeBetween('tablet', 1500px)
+  .betweenKeywordSize
+    color green
+
++screenSizeBetween(500px, 'laptop')
+  .betweenSizeKeyword
+    color green
+
+
+
++screenSize('palm')
+  .palm
+    color green
+
++screenSize('phone')
+  .phone
+    color green
+
++screenSize('tablet')
+  .tablet
+    color green
+
++screenSize('laptop')
+  .laptop
+    color green
+
++screenSize('desktop')
+  .desktop
+    color green
+
++screenSize('large-desktop')
+  .large-desktop
+    color green
+
+
+
++screenOrientation('portrait')
+  .orientationPortrait
+    color green
+
++screenOrientation('landscape')
+  .orientationLandscape
+    color green
+
+
++screenHighDPI()
+  .highDPI
+    color green
+

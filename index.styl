@@ -1,23 +1,47 @@
-mediaQueryNames = 'palm' 'phone' 'tablet' 'laptop' 'desktop' 'large-desktop'
-mediaQueryConditions = {}
+mediaQuerySizes = {}
 
-
-for name, i in mediaQueryNames
+for name, i in 'palm' 'phone' 'tablet' 'laptop' 'desktop' 'large-desktop'
   low = (i*240)px
   high = (((i+1)*240) - 1)px
-  if i == 0
-    mediaQueryConditions[name] = 'screen and (max-width: %s)' % high
-  else if i == length(mediaQueryNames) - 1
-    mediaQueryConditions[name] = 'screen and (min-width: %s)' % low
-  else
-    mediaQueryConditions[name] = 'screen and (min-width: %s) and (max-width: %s)' % (low high)
+  mediaQuerySizes[name] = (low high)
+
+screenSizeAbove(size)
+  sz = size in mediaQuerySizes ? mediaQuerySizes[size][1] : size
+  condition = 'screen and (min-width: %s)' % sz
+  @media condition
+    {block}
+
+screenSizeBelow(size)
+  sz = size in mediaQuerySizes ? mediaQuerySizes[size][0] : size
+  condition = 'screen and (max-width: %s)' % sz
+  @media condition
+    {block}
+
+screenSizeBetween(low, high)
+  lowsz = low in mediaQuerySizes ? mediaQuerySizes[low][0] : low
+  highsz = high in mediaQuerySizes ? mediaQuerySizes[high][1] : high
+  condition = 'screen and (min-width: %s) and (max-width: %s)' % (lowsz highsz)
+  @media condition
+    {block}
 
 screenSize(size)
-  condition = mediaQueryConditions[size]
+  lowsz = mediaQuerySizes[size][0]
+  highsz = mediaQuerySizes[size][1]
+  condition = 'screen and (min-width: %s) and (max-width: %s)' % (lowsz highsz)
   @media condition
     {block}
 
 screenOrientation(orientation)
   condition = 'screen and (orientation: %s)' % unquote(orientation)
   @media condition
+    {block}
+
+screenHighDPI()
+  conditions = ()
+  allConditions = ''
+  for prefix in '-webkit-min-' 'min--moz-' 'min-'
+    condition = 'only screen and (%sdevice-pixel-ratio: 2)' % prefix
+    push(conditions, condition)
+  allConditions = join(', ', conditions)
+  @media allConditions
     {block}

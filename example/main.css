@@ -5,58 +5,92 @@ body {
   min-height: 100%;
   min-width: 100%;
 }
-body:before {
-  display: block;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  content: 'default';
+li {
+  color: #ddd;
 }
-@media screen and (max-width: 239px) {
-  body:before {
-    content: 'palm';
+@media screen and (min-width: 719px) {
+  .aboveKeyword {
+    color: #008000;
+  }
+}
+@media screen and (min-width: 500px) {
+  .aboveSize {
+    color: #008000;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .belowKeyword {
+    color: #008000;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .belowSize {
+    color: #008000;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 1000px) {
+  .betweenSizeSize {
+    color: #008000;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 959px) {
+  .betweenKeywordKeyword {
+    color: #008000;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 1500px) {
+  .betweenKeywordSize {
+    color: #008000;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 959px) {
+  .betweenSizeKeyword {
+    color: #008000;
+  }
+}
+@media screen and (min-width: 0px) and (max-width: 239px) {
+  .palm {
+    color: #008000;
   }
 }
 @media screen and (min-width: 240px) and (max-width: 479px) {
-  body:before {
-    content: 'phone';
+  .phone {
+    color: #008000;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 719px) {
-  body:before {
-    content: 'tablet';
+  .tablet {
+    color: #008000;
   }
 }
 @media screen and (min-width: 720px) and (max-width: 959px) {
-  body:before {
-    content: 'laptop';
+  .laptop {
+    color: #008000;
   }
 }
 @media screen and (min-width: 960px) and (max-width: 1199px) {
-  body:before {
-    content: 'desktop';
+  .desktop {
+    color: #008000;
   }
 }
-@media screen and (min-width: 1200px) {
-  body:before {
-    content: 'large-desktop';
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+  .large-desktop {
+    color: #008000;
   }
-}
-body:after {
-  display: block;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  content: 'default';
 }
 @media screen and (orientation: portrait) {
-  body:after {
-    content: 'portrait';
+  .orientationPortrait {
+    color: #008000;
   }
 }
 @media screen and (orientation: landscape) {
-  body:after {
-    content: 'landscape';
+  .orientationLandscape {
+    color: #008000;
+  }
+}
+@media only screen and ('-webkit-min-'device-pixel-ratio: 2), only screen and ('min--moz-'device-pixel-ratio: 2), only screen and ('min-'device-pixel-ratio: 2) {
+  .highDPI {
+    color: #008000;
   }
 }
 
