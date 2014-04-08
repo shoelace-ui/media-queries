@@ -19,7 +19,14 @@ Super-easy media queries for Shoelace-UI
 
 ### Mixins
 
-The size keywords are: 'palm', 'phone', 'tablet', 'laptop', 'desktop', and 'large-desktop'.  They represent multiples of 240px.
+##### Keywords
+The below size keywords are multiples of 240px.
+  - 240px **palm**
+  - 480px **phone**
+  - 720px **tablet**
+  - 960px **laptop**
+  - 1200px **desktop**
+  - 1440px **large-desktop**
 
 Most functions can accept any of the keywords above __or__ a specific size with units - like `500px`.
 
