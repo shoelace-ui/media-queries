@@ -1,6 +1,6 @@
 {
   "name": "shoelace-ui-media-queries",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Easy media queries for Shoelace",
   "repository": "https://github.com/shoelace-ui/media-queries.git",
   "keywords": [
