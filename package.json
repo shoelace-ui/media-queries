@@ -1,12 +1,9 @@
 {
   "name": "shoelace-ui-media-queries",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Easy media queries for Shoelace",
   "repository": "https://github.com/shoelace-ui/media-queries.git",
-  "keywords": [
-    "stylus",
-    "shoelace"
-  ],
+  "keywords": ["stylus", "shoelace", "media", "queries"],
   "author": "Josh Faul <josh.faul@gmail.com>",
   "contributors": [
     "Michael Andrew Vanasse <mail@mndvns.com>"
