@@ -1,14 +1,4 @@
-STYLUS = ./node_modules/.bin/stylus
+test:
+	@./node_modules/.bin/serve $@
 
-node_modules: package.json
-	@npm install
-
-example: \
-	example/index.html \
-	example/main.css
-
-example/main.css: \
-	example/main.styl \
-	index.styl \
-	node_modules
-	@$(STYLUS) < $< > $@
+.PHONY: test
