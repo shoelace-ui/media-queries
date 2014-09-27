@@ -2,30 +2,7 @@
  * Module dependencies
  */
 
-@require './variables'
-
-/**
- * Generate `devices` with the given `size`.
- *
- * @param {Array} devices
- * @param {Number} measurement
- * @type {Function}
- * @api private
- */
-
-media-queries--calculate(devices, size)
-  for name, i in devices
-    low = (i*size)px
-    high = (((i+1)*size) - 1)px
-    media-queries--sizes[name] = (low high)
-
-/**
- * Generate default device sizes if not already present.
- * @api private
- */
-
-if not (length(media-queries--sizes))
-  media-queries--calculate(media-queries--devices, media-queries--unit)
+@require 'shoelace-ui-screen'
 
 /**
  * Generate a query for screens above a given `size`.
@@ -53,7 +30,7 @@ if not (length(media-queries--sizes))
  */
 
 screen-size-above(size)
-  sz = size in media-queries--sizes ? media-queries--sizes[size][1] : size
+  sz = size in screen--sizes ? screen--sizes[size][1] : size
   condition = 'screen and (min-width: %s)' % sz
   @media condition
     {block}
@@ -84,7 +61,7 @@ screen-size-above(size)
  */
 
 screen-size-below(size)
-  sz = size in media-queries--sizes ? media-queries--sizes[size][0] : size
+  sz = size in screen--sizes ? screen--sizes[size][0] : size
   condition = 'screen and (max-width: %s)' % sz
   @media condition
     {block}
@@ -126,8 +103,8 @@ screen-size-below(size)
  */
 
 screen-size-between(low, high)
-  lowsz = low in media-queries--sizes ? media-queries--sizes[low][0] : low
-  highsz = high in media-queries--sizes ? media-queries--sizes[high][1] : high
+  lowsz = low in screen--sizes ? screen--sizes[low][0] : low
+  highsz = high in screen--sizes ? screen--sizes[high][1] : high
   condition = 'screen and (min-width: %s) and (max-width: %s)' % (lowsz highsz)
   @media condition
     {block}
@@ -170,8 +147,8 @@ screen-size-between(low, high)
  */
 
 screen-size(size)
-  lowsz = media-queries--sizes[size][0]
-  highsz = media-queries--sizes[size][1]
+  lowsz = screen--sizes[size][0]
+  highsz = screen--sizes[size][1]
   condition = 'screen and (min-width: %s) and (max-width: %s)' % (lowsz highsz)
   @media condition
     {block}

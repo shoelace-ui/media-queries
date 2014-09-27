@@ -1,10 +1,9 @@
 {
   "name": "shoelace-ui-media-queries",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Easy media queries",
   "repository": "https://github.com/shoelace-ui/media-queries.git",
   "keywords": [
-    "stylus",
     "shoelace",
     "media",
     "queries"
@@ -16,5 +15,8 @@
   "devDependencies": {
     "serve": "^1.4.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "shoelace-ui-screen": "^0.1.0"
+  }
 }
