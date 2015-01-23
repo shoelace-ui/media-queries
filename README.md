@@ -16,10 +16,10 @@ npm install shoelace-ui-media-queries
 .foo
   color blue
 
-  +screenSize('tablet')
+  +screen-size('tablet')
     color red
 
-  +screenOrientation('portrait')
+  +screen-orientation('portrait')
     background-color orange
 ```
 
